@@ -1,0 +1,7 @@
+This Python code is intended to take a range of IPs and scan them for CGI vulns of your choice
+
+* Works with HTTP and HTTPS proxies, so that you can avoid giving away your location during the scan
+  * Each thread is set up with it's own proxy at random
+* You must supply your own CGI vulns, but the easiest to find is a directory traversal vuln (hence the name of the project)
+* IP range is generated in a "simple" fashion, meaning that each octal is generated separately w.r.t. the start and stop given by the user: 127.0.0.1, 127.0.0.254 will return expected results, but 127.0.0.1, 127.0.1.1 will only return those two addresses
+  * For all of the /16 addresses of the above example use 127.0.0.1, 127.0.1.254
